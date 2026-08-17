@@ -1,0 +1,254 @@
+---
+import "../styles/entry-d.css";
+import "@fontsource-variable/geist";
+import "@fontsource-variable/hanken-grotesk";
+import "@fontsource-variable/jetbrains-mono";
+import ThemeInit from "../components/ThemeInit.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import { site, hero, audiences, services, contact, milestones, philosophy, nav } from "../lib/content";
+
+const cardIcons = [
+  // compass — early-stage founders
+  "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.5 6.5-2 5-5 2 2-5 5-2Z",
+  // layers — growing product teams
+  "m12 3 8 4.5-8 4.5-8-4.5L12 3Zm-8 8 8 4.5 8-4.5M4 15.5 12 20l8-4.5",
+  // cpu — industrial & manufacturing
+  "M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2M7 7h10v10H7V7Z",
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{site.name} — {site.role}</title>
+    <meta name="description" content={hero.subhead} />
+    <ThemeInit defaultTheme="dark" />
+  </head>
+  <body class="min-h-screen bg-bg font-sans text-fg antialiased">
+    <header class="glass-nav fixed inset-x-0 top-0 z-50 border-b border-border">
+      <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+        <span class="font-display text-lg font-bold tracking-tight">{site.name}</span>
+        <nav class="hidden items-center gap-1 sm:flex">
+          {
+            nav.map((item) => (
+              <a
+                href={item.href}
+                class="rounded-md px-3 py-1.5 text-sm text-muted transition-colors hover:bg-surface hover:text-fg"
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+        <ThemeToggle />
+      </div>
+    </header>
+
+    <main class="pt-16">
+      <section class="mx-auto max-w-5xl border-b border-border px-6 py-20 sm:py-28">
+        <div class="grid gap-12 sm:grid-cols-12 sm:items-center">
+          <div class="sm:col-span-7">
+            <span
+              class="inline-block rounded-md border border-border bg-surface px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-muted"
+            >
+              {hero.eyebrow}
+            </span>
+            <h1 class="mt-5 font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
+              {hero.headline}
+            </h1>
+            <p class="mt-6 max-w-lg leading-relaxed text-muted">{hero.subhead}</p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href={hero.primaryCta.href}
+                class="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-accent-contrast transition-opacity hover:opacity-90"
+              >
+                {hero.primaryCta.label}
+              </a>
+              <a
+                href={hero.secondaryCta.href}
+                target="_blank"
+                rel="noreferrer"
+                class="rounded-md border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-accent"
+              >
+                {hero.secondaryCta.label}
+              </a>
+            </div>
+            <p class="mt-8 font-mono text-[11px] uppercase tracking-wider text-muted">
+              {site.location} — working with EU &amp; US teams
+            </p>
+          </div>
+          <div class="sm:col-span-5">
+            <div class="mx-auto w-44 sm:mx-0 sm:ml-auto sm:w-56">
+              <PhotoPlaceholder class="rounded-[2rem]" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="services"
+        class="mx-auto max-w-5xl scroll-mt-20 border-b border-border px-6 py-20"
+      >
+        <h2 class="mb-10 font-display text-2xl font-semibold">What I offer</h2>
+        <div class="grid gap-6 sm:grid-cols-3">
+          {
+            services.map((s) => (
+              <div class="flex flex-col gap-2 rounded-lg border border-border bg-surface p-7">
+                <h3 class="font-display text-lg font-semibold">{s.title}</h3>
+                <p class="text-sm leading-relaxed text-muted">{s.body}</p>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="work" class="mx-auto max-w-5xl scroll-mt-20 border-b border-border px-6 py-20">
+        <h2 class="mb-10 font-display text-2xl font-semibold">Who I usually work with</h2>
+        <div class="grid gap-6 sm:grid-cols-3">
+          {
+            audiences.map((a, i) => (
+              <div class="flex flex-col gap-4 rounded-lg border border-border bg-surface p-7 transition-colors hover:border-accent/50">
+                <svg
+                  class="h-6 w-6 text-accent"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d={cardIcons[i]} />
+                </svg>
+                <h3 class="font-display text-lg font-semibold">{a.title}</h3>
+                <p class="flex-grow text-sm leading-relaxed text-muted">{a.body}</p>
+                <div class="flex flex-wrap gap-2">
+                  {a.tags.map((t) => (
+                    <span class="rounded border border-border px-2 py-1 font-mono text-[11px] text-muted">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section
+        id="process"
+        class="mx-auto max-w-5xl scroll-mt-20 border-b border-border px-6 py-20"
+      >
+        <h2 class="mb-10 font-display text-2xl font-semibold">Operational philosophy</h2>
+        <div class="grid overflow-hidden rounded-lg border border-border sm:grid-cols-2">
+          <div class="border-b border-border p-8 sm:border-b-0 sm:border-r sm:p-10">
+            <h3 class="mb-6 flex items-center gap-2 font-display text-lg font-semibold text-accent">
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="m8.5 12.5 2.5 2.5 4.5-5" />
+              </svg>
+              How I work
+            </h3>
+            <ul class="flex flex-col gap-4">
+              {
+                philosophy.how.map((item) => (
+                  <li class="flex gap-3 text-sm leading-relaxed">
+                    <span class="mt-0.5 text-accent">→</span>
+                    <span>{item}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div class="bg-surface p-8 sm:p-10">
+            <h3 class="mb-6 flex items-center gap-2 font-display text-lg font-semibold text-muted">
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="m9.5 9.5 5 5m0-5-5 5" />
+              </svg>
+              What I avoid
+            </h3>
+            <ul class="flex flex-col gap-4">
+              {
+                philosophy.avoid.map((item) => (
+                  <li class="flex gap-3 text-sm leading-relaxed text-muted">
+                    <span class="mt-0.5">×</span>
+                    <span>{item}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="background"
+        class="mx-auto max-w-5xl scroll-mt-20 border-b border-border px-6 py-20"
+      >
+        <h2 class="mb-10 font-display text-2xl font-semibold">Background</h2>
+        <div class="flex flex-col">
+          {
+            milestones.map((m) => (
+              <div class="flex flex-col justify-between gap-1 border-b border-border py-4 last:border-b-0 sm:flex-row sm:items-center">
+                <span class="font-display font-medium">{m.label}</span>
+                <span class="font-mono text-xs uppercase tracking-wider text-muted">{m.meta}</span>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="contact" class="mx-auto max-w-5xl scroll-mt-20 px-6 py-20 text-center">
+        <h2 class="font-display text-2xl font-bold sm:text-3xl">{contact.heading}</h2>
+        <p class="mx-auto mt-3 max-w-md leading-relaxed text-muted">{contact.body}</p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href={`mailto:${site.email}`}
+            class="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-accent-contrast transition-opacity hover:opacity-90"
+          >
+            Email
+          </a>
+          <a
+            href={site.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            class="rounded-md border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-accent"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <SiteFooter />
+
+    <style>
+      .glass-nav {
+        background-color: rgba(var(--surface-rgb), 0.65);
+        backdrop-filter: blur(16px) saturate(160%);
+        -webkit-backdrop-filter: blur(16px) saturate(160%);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      }
+    </style>
+  </body>
+</html>

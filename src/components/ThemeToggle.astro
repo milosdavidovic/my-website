@@ -1,0 +1,59 @@
+---
+---
+
+<button
+  id="theme-toggle"
+  type="button"
+  aria-label="Toggle dark and light theme"
+  class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border text-fg transition-colors hover:border-accent"
+>
+  <svg
+    class="theme-icon-sun h-4 w-4"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+  >
+    <circle cx="12" cy="12" r="4"></circle>
+    <path
+      d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+    ></path>
+  </svg>
+  <svg
+    class="theme-icon-moon h-4 w-4"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"></path>
+  </svg>
+</button>
+
+<style>
+  [data-theme="dark"] .theme-icon-sun {
+    display: none;
+  }
+  [data-theme="light"] .theme-icon-moon {
+    display: none;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    document.querySelectorAll("#theme-toggle").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var root = document.documentElement;
+        var current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+        var next = current === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try {
+          localStorage.setItem("theme", next);
+        } catch (e) {}
+      });
+    });
+  })();
+</script>

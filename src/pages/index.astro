@@ -1,0 +1,67 @@
+---
+import "../styles/global.css";
+import "@fontsource-variable/inter";
+
+const variations = [
+  {
+    href: "/a",
+    name: "A — Signal",
+    desc: "Dark-first, centered, quiet grid texture, fully rounded shapes. Closest to the cognee.ai reference. Confident, technical-adjacent, calm.",
+  },
+  {
+    href: "/b",
+    name: "B — Field Notes",
+    desc: "Light-first, asymmetric hero, serif headlines paired with sans body. Editorial, human, approachable — least \"tech company.\"",
+  },
+  {
+    href: "/c",
+    name: "C — Grid",
+    desc: "Light-first, strict Swiss-poster grid with rule lines and numbered sections, sharp corners. Structured, precise.",
+  },
+  {
+    href: "/d",
+    name: "D — Blueprint",
+    desc: "Dark-first, sticky nav with section anchors, competency cards with tags, a \"how I work / what I avoid\" comparison panel. Adapted from the misc/stitch reference. Technical, structured, IDE-adjacent.",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Portfolio — variation picker</title>
+  </head>
+  <body class="min-h-screen bg-white text-neutral-900 antialiased">
+    <main class="mx-auto max-w-2xl px-6 py-20">
+      <p class="text-xs uppercase tracking-wider text-neutral-400">Internal — not part of the final site</p>
+      <h1 class="mt-3 text-2xl font-semibold">Pick a direction</h1>
+      <p class="mt-2 text-sm leading-relaxed text-neutral-500">
+        Four full design variations of the same content. Each has its own light/dark toggle in
+        the top corner — click through, react, and we'll take one forward.
+      </p>
+
+      <div class="mt-10 space-y-4">
+        {
+          variations.map((v) => (
+            <a
+              href={v.href}
+              class="block rounded-xl border border-neutral-200 p-5 transition-colors hover:border-neutral-400"
+            >
+              <span class="font-medium">{v.name}</span>
+              <p class="mt-1 text-sm leading-relaxed text-neutral-500">{v.desc}</p>
+            </a>
+          ))
+        }
+      </div>
+
+      <a
+        href="/brand"
+        class="mt-10 inline-block text-sm text-neutral-500 underline underline-offset-4 hover:text-neutral-900"
+      >
+        Brand decisions doc →
+      </a>
+    </main>
+  </body>
+</html>

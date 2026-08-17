@@ -1,0 +1,163 @@
+---
+import "../styles/entry-a.css";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/jetbrains-mono";
+import ThemeInit from "../components/ThemeInit.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import { site, hero, audiences, services, background, howIWork, contact } from "../lib/content";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{site.name} — {site.role}</title>
+    <meta name="description" content={hero.subhead} />
+    <ThemeInit defaultTheme="dark" />
+  </head>
+  <body class="min-h-screen bg-bg text-fg antialiased">
+    <section class="relative overflow-hidden">
+      <div class="grid-texture pointer-events-none absolute inset-0 -z-10 opacity-50"></div>
+
+      <div class="absolute right-6 top-6 z-10">
+        <ThemeToggle />
+      </div>
+
+      <div class="mx-auto max-w-3xl px-6 pb-20 pt-20 text-center sm:pt-28">
+        <div class="mb-8 flex justify-center">
+          <div class="w-32 sm:w-40">
+            <PhotoPlaceholder class="rounded-[2rem]" />
+          </div>
+        </div>
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-muted"
+        >
+          {hero.eyebrow}
+        </span>
+        <h1 class="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight sm:text-6xl">
+          {hero.headline}
+        </h1>
+        <p class="mx-auto mt-6 max-w-xl text-balance text-lg leading-relaxed text-muted">
+          {hero.subhead}
+        </p>
+        <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href={hero.primaryCta.href}
+            class="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-accent-contrast transition-opacity hover:opacity-90"
+          >
+            {hero.primaryCta.label}
+          </a>
+          <a
+            href={hero.secondaryCta.href}
+            target="_blank"
+            rel="noreferrer"
+            class="rounded-md border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-accent"
+          >
+            {hero.secondaryCta.label}
+          </a>
+        </div>
+        <p class="mt-8 font-mono text-[11px] uppercase tracking-wider text-muted">
+          {site.location} — working with EU &amp; US teams
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-5xl px-6 py-16">
+      <h2 class="mb-10 font-mono text-xs uppercase tracking-wider text-muted">What I offer</h2>
+      <div class="grid gap-5 sm:grid-cols-3">
+        {
+          services.map((s) => (
+            <div class="rounded-2xl border border-border bg-surface p-6">
+              <h3 class="mb-2 font-medium">{s.title}</h3>
+              <p class="text-sm leading-relaxed text-muted">{s.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-5xl px-6 py-16">
+      <h2 class="mb-10 font-mono text-xs uppercase tracking-wider text-muted">
+        Who I usually work with
+      </h2>
+      <div class="grid gap-5 sm:grid-cols-3">
+        {
+          audiences.map((a) => (
+            <div class="rounded-2xl border border-border bg-surface p-6">
+              <h3 class="mb-2 font-medium">{a.title}</h3>
+              <p class="text-sm leading-relaxed text-muted">{a.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-3xl px-6 py-16">
+      <h2 class="mb-4 font-mono text-xs uppercase tracking-wider text-muted">Background</h2>
+      <p class="mb-6 leading-relaxed text-muted">{background.intro}</p>
+      <ul class="space-y-3">
+        {
+          background.facts.map((f) => (
+            <li class="flex gap-3 text-sm leading-relaxed">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-md bg-accent" />
+              <span>{f}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="mx-auto max-w-5xl px-6 py-16">
+      <h2 class="mb-10 font-mono text-xs uppercase tracking-wider text-muted">How I work</h2>
+      <div class="grid gap-8 sm:grid-cols-3">
+        {
+          howIWork.map((h) => (
+            <div>
+              <h3 class="mb-2 font-medium">{h.title}</h3>
+              <p class="text-sm leading-relaxed text-muted">{h.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="relative overflow-hidden border-t border-border">
+      <div class="grid-texture pointer-events-none absolute inset-0 -z-10 opacity-30"></div>
+      <div class="mx-auto max-w-3xl px-6 py-20 text-center">
+        <h2 class="text-2xl font-semibold sm:text-3xl">{contact.heading}</h2>
+        <p class="mx-auto mt-3 max-w-md leading-relaxed text-muted">{contact.body}</p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href={`mailto:${site.email}`}
+            class="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-accent-contrast transition-opacity hover:opacity-90"
+          >
+            Email
+          </a>
+          <a
+            href={site.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            class="rounded-md border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-accent"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <SiteFooter />
+
+    <style>
+      .grid-texture {
+        background-image:
+          linear-gradient(to right, var(--border) 1px, transparent 1px),
+          linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+        background-size: 40px 40px;
+        mask-image: radial-gradient(ellipse 70% 55% at 50% 20%, black 30%, transparent 100%);
+      }
+    </style>
+  </body>
+</html>

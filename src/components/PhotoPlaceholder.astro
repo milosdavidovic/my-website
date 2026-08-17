@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import heroPhoto from "../assets/hero-photo.png";
+
+interface Props {
+  class?: string;
+}
+const { class: className = "rounded-full" } = Astro.props;
+---
+
+<div
+  class:list={[
+    "group relative aspect-square w-full overflow-hidden",
+    className,
+  ]}
+>
+  <Image
+    src={heroPhoto}
+    alt="Milos Davidovic"
+    width={288}
+    height={288}
+    class="h-full w-full object-cover grayscale contrast-[1.05] transition-[filter] duration-500 ease-out group-hover:grayscale-0"
+  />
+</div>

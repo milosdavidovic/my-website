@@ -1,0 +1,35 @@
+/* Variation B — warm-editorial layout, using the shared brand palette */
+
+:root {
+  --bg: #faf9fc;
+  --surface: #ffffff;
+  --fg: #16151a;
+  --muted: #5f5c6b;
+  --accent: #7c5cf0;
+  --accent-contrast: #faf9fc;
+  --border: #e6e4ec;
+}
+
+[data-theme="dark"] {
+  --bg: #0a0a0c;
+  --surface: #131317;
+  --fg: #f2f1f5;
+  --muted: #9a97a6;
+  --accent: #a78bfa;
+  --accent-contrast: #0a0a0c;
+  --border: #26242c;
+}
+
+@theme {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-border: var(--border);
+
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces Variable", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+}
