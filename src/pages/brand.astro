@@ -3,6 +3,8 @@ import "../styles/global.css";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
 
+const base = import.meta.env.BASE_URL;
+
 const palette = {
   light: [
     { name: "bg", hex: "#faf9fc" },
@@ -26,7 +28,7 @@ const variations = [
   {
     id: "A",
     name: "Signal",
-    href: "/a",
+    href: `${base}a`,
     concept:
       "Closest to the cognee.ai reference you liked: centered hero, quiet grid texture, fully rounded shapes. Confident and technical-adjacent without being loud.",
     font: '"Inter Variable" for everything, "JetBrains Mono Variable" for small eyebrow/index labels.',
@@ -36,7 +38,7 @@ const variations = [
   {
     id: "B",
     name: "Field Notes",
-    href: "/b",
+    href: `${base}b`,
     concept:
       "Editorial layout: asymmetric hero with photo beside the text, serif headlines, numbered list instead of cards. Reads as the most human and least \"tech company\" of the three.",
     font: '"Fraunces Variable" (serif) for headlines and section labels, "Inter Variable" for body copy.',
@@ -46,7 +48,7 @@ const variations = [
   {
     id: "C",
     name: "Grid",
-    href: "/c",
+    href: `${base}c`,
     concept:
       "Strict Swiss-poster structure: boxed layout, hairline rules, numbered sections (01–05). The most structured and precise — reads as rigorous, systems-minded.",
     font: '"Archivo Variable" for everything, "JetBrains Mono Variable" for index numbers and small labels.',
@@ -56,7 +58,7 @@ const variations = [
   {
     id: "D",
     name: "Blueprint",
-    href: "/d",
+    href: `${base}d`,
     concept:
       "Adapted from the misc/stitch_pragmatic_technical_leadership_portfolio reference, restyled onto the shared brand palette (no shadows/blur, flat surfaces, to match the other three). Sticky nav with section anchors, competency cards with skill tags, a \"how I work / what I avoid\" comparison panel, and a condensed background list. The most \"product/IDE\" feeling of the four.",
     font: '"Hanken Grotesk Variable" for headings, "Geist Variable" for body copy, "JetBrains Mono Variable" for labels and metadata — matching the reference\'s type pairing.',

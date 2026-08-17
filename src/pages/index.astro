@@ -2,24 +2,26 @@
 import "../styles/global.css";
 import "@fontsource-variable/inter";
 
+const base = import.meta.env.BASE_URL;
+
 const variations = [
   {
-    href: "/a",
+    href: `${base}a`,
     name: "A — Signal",
     desc: "Dark-first, centered, quiet grid texture, fully rounded shapes. Closest to the cognee.ai reference. Confident, technical-adjacent, calm.",
   },
   {
-    href: "/b",
+    href: `${base}b`,
     name: "B — Field Notes",
     desc: "Light-first, asymmetric hero, serif headlines paired with sans body. Editorial, human, approachable — least \"tech company.\"",
   },
   {
-    href: "/c",
+    href: `${base}c`,
     name: "C — Grid",
     desc: "Light-first, strict Swiss-poster grid with rule lines and numbered sections, sharp corners. Structured, precise.",
   },
   {
-    href: "/d",
+    href: `${base}d`,
     name: "D — Blueprint",
     desc: "Dark-first, sticky nav with section anchors, competency cards with tags, a \"how I work / what I avoid\" comparison panel. Adapted from the misc/stitch reference. Technical, structured, IDE-adjacent.",
   },
@@ -57,7 +59,7 @@ const variations = [
       </div>
 
       <a
-        href="/brand"
+        href={`${base}brand`}
         class="mt-10 inline-block text-sm text-neutral-500 underline underline-offset-4 hover:text-neutral-900"
       >
         Brand decisions doc →
