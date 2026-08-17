@@ -11,7 +11,7 @@ export const site = {
 
 export const hero = {
   eyebrow: "Fractional CTO & Technical Leadership",
-  headline: "Technology decisions that hold up as you grow.",
+  headline: "Hi, I'm Steve, technical leader for product teams.",
   subhead:
     "14+ years leading engineering across IoT, fintech, medtech and manufacturing — architecture, hiring, and hands-on delivery for teams from first product to Series A.",
   primaryCta: { label: "Get in touch", href: "mailto:milosgrozni@gmail.com" },
