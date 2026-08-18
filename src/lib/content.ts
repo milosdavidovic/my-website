@@ -6,32 +6,35 @@ export const site = {
   role: "Fractional CTO & Technical Leadership",
   location: "Novi Sad, Serbia",
   email: "milosgrozni@gmail.com",
-  linkedin: "https://www.linkedin.com/in/milos-davidovic", // TODO: confirm exact LinkedIn URL
+  linkedin: "https://www.linkedin.com/in/milosdavidovic",
 };
 
 export const hero = {
   eyebrow: "Fractional CTO & Technical Leadership",
   headline: "Hi, I'm Steve, technical leader for product teams.",
   subhead:
-    "14+ years leading engineering across IoT, fintech, medtech and manufacturing — architecture, hiring, and hands-on delivery for teams from first product to Series A.",
+    "15 years leading engineering across IoT, fintech, medtech and manufacturing — architecture, hiring, and hands-on delivery for teams from first product to Series A.",
   primaryCta: { label: "Get in touch", href: "mailto:milosgrozni@gmail.com" },
-  secondaryCta: { label: "LinkedIn", href: "https://www.linkedin.com/in/milos-davidovic" },
+  secondaryCta: {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/milosdavidovic",
+  },
 };
 
 export const audiences = [
   {
     title: "Early-stage founders",
-    body: "You have the product vision and no CTO yet. I help set the technical foundation — architecture, first hires, and a roadmap that won't need to be rebuilt in a year.",
+    body: "You have the product vision and no CTO yet. I can help with technical foundation, first hire, system design, so you can avoid costly mistakes and time waste.",
     tags: ["Architecture", "Early hires"],
   },
   {
     title: "Growing product teams",
-    body: "The product works, but velocity is slowing and the codebase is harder to move in. I bring process, mentorship and architectural clarity without a full-time VP Eng hire.",
+    body: "The product works, but velocity is slowing and stability is starting to slip. I bring process, mentorship and architectural clarity without a full-time VP Eng hire.",
     tags: ["Process & CI/CD", "Mentorship"],
   },
   {
-    title: "Industrial & manufacturing",
-    body: "You build physical products and need a digital layer — IoT, cloud, or a SaaS product around your hardware. My background is in mechatronics as much as software.",
+    title: "Industrial & IoT",
+    body: "You build physical products and need a digital layer — IoT, cloud, or a SaaS product around your hardware. My background is mechatronics engineering, so I understand the challenges of the industry.",
     tags: ["IoT", "Embedded + cloud"],
   },
 ] as const;
@@ -39,43 +42,74 @@ export const audiences = [
 export const services = [
   {
     title: "Fractional CTO / Technical Leadership",
-    body: "Ongoing, part-time — 1 to 3 days a week. Architecture decisions, technical strategy, and hiring for a team that doesn't need a full-time hire yet.",
+    body: "Ongoing, part-time. Architecture decisions, technical strategy, and hiring for a team that doesn't need a full-time hire yet, but needs technical guidance.",
   },
   {
     title: "Architecture & Technical Assessment",
-    body: "A scoped, time-boxed engagement: audit of the codebase and team, then a written roadmap. No ongoing commitment required.",
+    body: "A scoped, time-boxed engagement: audit of the codebase and team. Written report — findings and improvements, prioritized, ready for your team to act on.",
   },
   {
     title: "Hands-on Senior Engineering",
-    body: "Embedded delivery for a team that needs execution, not just strategy — code review, pairing, unblocking, and process like CI/CD and testing.",
+    body: "When you're behind schedule and need hands-on help, not just advice, I work alongside the team directly — code review, pairing, unblocking, and CI/CD.",
   },
 ] as const;
 
+// One shared list of background items, used everywhere. `label` + `meta` is the
+// condensed form (D's label/meta list). `long`, where present, is the fuller
+// prose version A/B/C render as a sentence; variations without a `long` fall
+// back to "label — meta".
+//
+// Framed as a career arc (role → range), not a project list — project-level
+// detail lives on LinkedIn, linked from the contact section.
 export const background = {
   intro:
-    "Product-focused technical leader working at the intersection of technology, product and people — pragmatic and outcome-driven rather than purely technical.",
-  facts: [
-    "14+ years across IoT, fintech, medtech, manufacturing and cloud computing",
-    "MSc Mechatronics, University of Novi Sad (2012)",
-    "Founder of Guzva — architected, built and led the team for a consumer social-events platform, concept to live product",
-    "Tech Lead on two AI inference platforms for a major cloud provider, leading teams of 7–8 engineers",
-    "Tech Lead on Spindle, an industrial IoT platform for manufacturing",
-    "2020 MVP Award for technical leadership and knowledge sharing",
+    "I've worked across small teams and large ones, early-stage startups and mature companies — including environments where software has to work in step with physical machines. That range is what I bring to fractional CTO work: enough breadth to know which problems actually matter at your stage, and enough depth to build the thing myself when that's what's needed.",
+  items: [
+    {
+      label: "Software engineer",
+      meta: "15+ years, across fintech, medtech, manufacturing and cloud",
+      long: "15+ years as a software engineer across fintech, medtech, manufacturing and cloud platforms — different domains, project types and stages of a product's life",
+    },
+    {
+      label: "Tech lead",
+      meta: "Teams of 3–12, from system design to delivery",
+      long: "Tech lead for teams of 3 to 12 engineers — system design, mentoring, technical decision-making, and the bridge between product and engineering",
+    },
+    {
+      label: "Founder, Guzva",
+      meta: "guzva.rs — consumer AI-driven social-events platform",
+      long: "Founder of guzva.rs, an AI-driven event discovery platform — architecture, build and the team, from concept to live product",
+    },
+    {
+      label: "Co-CTO",
+      meta: "Business strategy, hiring, technical oversight — outsourcing company",
+      long: "Co-CTO at an outsourcing company — business strategy, hiring and technical oversight across client engineering teams",
+    },
+    {
+      label: "Technical consultant",
+      meta: "Architecture, assessments, hiring, process",
+      long: "Independent technical consultant — architecture reviews, technical assessments, system design, hiring and process guidance for teams without an in-house CTO",
+    },
+    {
+      label: "Mechatronics background",
+      meta: "Software that runs alongside physical machines",
+      long: "MSc Mechatronics — the differentiator behind the industrial and IoT work: I speak both software and factory floor",
+    },
   ],
 };
 
 export const howIWork = [
   {
     title: "Straightforward contracting",
-    body: "B2B, through my own company. Outcome-based retainers, not hourly billing or time-tracking.",
+    body: "Outcome-based retainers, not hourly billing or time-tracking. Clear scope, clear deliverables, and a contract that spells out what you're getting.",
   },
   {
     title: "Async-first",
-    body: "Code review, architecture guidance and unblocking happen in Slack, GitHub and Jira. A short weekly call keeps everyone aligned.",
+    body: "Your team gets unblocked in hours, not at the next weekly meeting — code review, architecture guidance and decisions in Slack, GitHub and Jira, with a short call to stay aligned.",
   },
   {
     title: "Flexible by design",
-    body: "Based in Novi Sad, working comfortably across EU and US time zones. Also open, on occasion, to a part-time role with a funded, growing team.",
+    body: "Based in Novi Sad, working comfortably across EU and US time zones. Engagements scale up or down as your needs change — no long lock-in.",
   },
 ] as const;
 
@@ -84,33 +118,24 @@ export const contact = {
   body: "The best way to reach me is email or LinkedIn — happy to have a first, no-pressure conversation about what you need.",
 };
 
-// Condensed background, used by variation D's label/meta list.
-export const milestones = [
-  { label: "MSc Mechatronics", meta: "University of Novi Sad, 2012" },
-  { label: "Founder, Guzva", meta: "Consumer social-events platform" },
-  { label: "Tech Lead, AI inference platforms", meta: "Major cloud provider" },
-  { label: "Tech Lead, Spindle", meta: "Industrial IoT for manufacturing" },
-  { label: "MVP Award", meta: "Technical leadership, 2020" },
-] as const;
-
 // Short paired bullets ("how I work" vs. "what I avoid"), used by variation D's comparison panel.
 export const philosophy = {
   how: [
     "Direct communication with founders and stakeholders, not filtered through account managers.",
-    "Outcome-based retainers, not hourly billing or time-tracking.",
+    "Paid for outcomes, not hours — no time-tracking software.",
     "Async-first: code review, architecture guidance and unblocking in Slack, GitHub and Jira.",
   ],
   avoid: [
-    "Meetings without an agenda or a decision to make.",
+    "Adding process for its own sake — only what the team's stage actually needs.",
     "Chasing trend technology for critical-path infrastructure.",
-    "Micromanagement — I work best with real autonomy.",
+    "Rewrites when a targeted fix will do.",
   ],
 };
 
 // Short nav labels + section anchors, used by variation D's sticky nav.
 export const nav = [
   { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
+  { label: "Who I help", href: "#work" },
   { label: "Background", href: "#background" },
   { label: "Process", href: "#process" },
   { label: "Contact", href: "#contact" },

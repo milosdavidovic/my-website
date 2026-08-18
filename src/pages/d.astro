@@ -7,7 +7,7 @@ import ThemeInit from "../components/ThemeInit.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 import SiteFooter from "../components/SiteFooter.astro";
-import { site, hero, audiences, services, contact, milestones, philosophy, nav } from "../lib/content";
+import { site, hero, audiences, services, background, contact, philosophy, nav } from "../lib/content";
 
 const cardIcons = [
   // compass — early-stage founders
@@ -208,10 +208,10 @@ const cardIcons = [
         <h2 class="mb-10 font-display text-2xl font-semibold">Background</h2>
         <div class="flex flex-col">
           {
-            milestones.map((m) => (
+            background.items.map((item) => (
               <div class="flex flex-col justify-between gap-1 border-b border-border py-4 last:border-b-0 sm:flex-row sm:items-center">
-                <span class="font-display font-medium">{m.label}</span>
-                <span class="font-mono text-xs uppercase tracking-wider text-muted">{m.meta}</span>
+                <span class="font-display font-medium">{item.label}</span>
+                <span class="font-mono text-xs uppercase tracking-wider text-muted">{item.meta}</span>
               </div>
             ))
           }

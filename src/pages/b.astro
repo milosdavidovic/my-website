@@ -139,10 +139,10 @@ import { site, hero, audiences, services, background, howIWork, contact } from "
         </p>
         <ul class="grid gap-x-8 gap-y-3 sm:grid-cols-2">
           {
-            background.facts.map((f) => (
+            background.items.map((item) => (
               <li class="flex gap-3 text-sm leading-relaxed text-muted">
                 <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                <span>{f}</span>
+                <span>{item.long ?? `${item.label} — ${item.meta}`}</span>
               </li>
             ))
           }

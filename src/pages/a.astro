@@ -100,10 +100,10 @@ import { site, hero, audiences, services, background, howIWork, contact } from "
       <p class="mb-6 leading-relaxed text-muted">{background.intro}</p>
       <ul class="space-y-3">
         {
-          background.facts.map((f) => (
+          background.items.map((item) => (
             <li class="flex gap-3 text-sm leading-relaxed">
               <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-md bg-accent" />
-              <span>{f}</span>
+              <span>{item.long ?? `${item.label} — ${item.meta}`}</span>
             </li>
           ))
         }
