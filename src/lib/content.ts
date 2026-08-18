@@ -9,7 +9,7 @@ export const site = {
   name: placeholderFullName,
   role: "Fractional CTO & Technical Leadership",
   location: "Novi Sad, Serbia",
-  email: "milosgrozni@gmail.com",
+  email: "milos@davidovic.net",
   linkedin: "https://www.linkedin.com/in/milosdavidovic",
 };
 
@@ -18,7 +18,7 @@ export const hero = {
   headline: `Hi, I'm ${placeholderFirstName}, technical leader for product teams.`,
   subhead:
     "15 years leading engineering across IoT, fintech, medtech and manufacturing — architecture, hiring, and hands-on delivery for teams from first product to Series A.",
-  primaryCta: { label: "Get in touch", href: "mailto:milosgrozni@gmail.com" },
+  primaryCta: { label: "Get in touch", href: `mailto:${site.email}` },
   secondaryCta: {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/milosdavidovic",
@@ -122,17 +122,20 @@ export const contact = {
   body: "The best way to reach me is email or LinkedIn — happy to learn about what you're building.",
 };
 
-// Short paired bullets ("how I work" vs. "what I avoid"), used by variation D's comparison panel.
+// Short paired bullets ("how I work" vs. "what I avoid"), used by variation D's
+// comparison panel. Mirrors the same three themes as `howIWork` (contracting,
+// communication, flexibility) so the narrative matches across variations —
+// just told as a how/avoid contrast instead of a plain list.
 export const philosophy = {
   how: [
-    "Direct communication with founders and stakeholders, not filtered through account managers.",
-    "Paid for outcomes, not hours — no time-tracking software.",
-    "Async-first: code review, architecture guidance and unblocking in Slack, GitHub and Jira.",
+    "Outcome-based retainers, not hourly billing — clear scope and deliverables from the start.",
+    "Async-first: code review, architecture guidance and decisions in Slack, GitHub and Jira, with a short call to stay aligned.",
+    "Engagements scale up or down as your needs change, working across EU and US time zones.",
   ],
   avoid: [
-    "Adding process for its own sake — only what the team's stage actually needs.",
-    "Chasing trend technology for critical-path infrastructure.",
-    "Rewrites when a targeted fix will do.",
+    "Hourly billing or time-tracking software.",
+    "Decisions gated behind scheduled meetings, or filtered through account managers.",
+    "Long lock-in contracts that don't flex as your needs change.",
   ],
 };
 
