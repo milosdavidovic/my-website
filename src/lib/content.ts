@@ -1,8 +1,12 @@
 // Single source of truth for site copy, shared across all design variations.
 // Edit here once; every variation (a/b/c/d) pulls from this file.
 
+// Whitelabel placeholders until the real name goes live — change here.
+const placeholderFirstName = "Steve";
+const placeholderFullName = "Steve Palmer";
+
 export const site = {
-  name: "Milos Davidovic",
+  name: placeholderFullName,
   role: "Fractional CTO & Technical Leadership",
   location: "Novi Sad, Serbia",
   email: "milosgrozni@gmail.com",
@@ -11,7 +15,7 @@ export const site = {
 
 export const hero = {
   eyebrow: "Fractional CTO & Technical Leadership",
-  headline: "Hi, I'm Steve, technical leader for product teams.",
+  headline: `Hi, I'm ${placeholderFirstName}, technical leader for product teams.`,
   subhead:
     "15 years leading engineering across IoT, fintech, medtech and manufacturing — architecture, hiring, and hands-on delivery for teams from first product to Series A.",
   primaryCta: { label: "Get in touch", href: "mailto:milosgrozni@gmail.com" },
@@ -66,19 +70,9 @@ export const background = {
     "I've worked across small teams and large ones, early-stage startups and mature companies — including environments where software has to work in step with physical machines. That range is what I bring to fractional CTO work: enough breadth to know which problems actually matter at your stage, and enough depth to build the thing myself when that's what's needed.",
   items: [
     {
-      label: "Software engineer",
-      meta: "15+ years, across fintech, medtech, manufacturing and cloud",
-      long: "15+ years as a software engineer across fintech, medtech, manufacturing and cloud platforms — different domains, project types and stages of a product's life",
-    },
-    {
-      label: "Tech lead",
-      meta: "Teams of 3–12, from system design to delivery",
-      long: "Tech lead for teams of 3 to 12 engineers — system design, mentoring, technical decision-making, and the bridge between product and engineering",
-    },
-    {
-      label: "Founder, Guzva",
-      meta: "guzva.rs — consumer AI-driven social-events platform",
-      long: "Founder of guzva.rs, an AI-driven event discovery platform — architecture, build and the team, from concept to live product",
+      label: "Technical consultant",
+      meta: "Architecture, assessments, hiring, process",
+      long: "Independent technical consultant — architecture reviews, technical assessments, system design, hiring and process guidance for teams without an in-house CTO",
     },
     {
       label: "Co-CTO",
@@ -86,9 +80,19 @@ export const background = {
       long: "Co-CTO at an outsourcing company — business strategy, hiring and technical oversight across client engineering teams",
     },
     {
-      label: "Technical consultant",
-      meta: "Architecture, assessments, hiring, process",
-      long: "Independent technical consultant — architecture reviews, technical assessments, system design, hiring and process guidance for teams without an in-house CTO",
+      label: "Founder, Guzva",
+      meta: "guzva.rs — consumer AI-driven social-events platform",
+      long: "Founder of guzva.rs, an AI-driven event discovery platform — architecture, build and the team, from concept to live product",
+    },
+    {
+      label: "Tech lead",
+      meta: "Teams of 3–12, from system design to delivery",
+      long: "Tech lead for teams of 3 to 12 engineers — system design, mentoring, technical decision-making, and the bridge between product and engineering",
+    },
+    {
+      label: "Software engineer",
+      meta: "Across fintech, medtech, manufacturing and cloud",
+      long: "15+ years as a software engineer across fintech, medtech, manufacturing and cloud platforms — different domains, project types and stages of a product's life",
     },
     {
       label: "Mechatronics background",
@@ -114,8 +118,8 @@ export const howIWork = [
 ] as const;
 
 export const contact = {
-  heading: "Let's talk",
-  body: "The best way to reach me is email or LinkedIn — happy to have a first, no-pressure conversation about what you need.",
+  heading: "How can I help?",
+  body: "The best way to reach me is email or LinkedIn — happy to learn about what you're building.",
 };
 
 // Short paired bullets ("how I work" vs. "what I avoid"), used by variation D's comparison panel.

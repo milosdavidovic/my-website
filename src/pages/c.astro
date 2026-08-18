@@ -115,12 +115,15 @@ import { site, hero, audiences, services, background, howIWork, contact } from "
         <h2 class="text-sm font-semibold uppercase tracking-[0.1em]">Background</h2>
       </div>
       <p class="mb-7 max-w-2xl leading-relaxed text-muted">{background.intro}</p>
-      <ul class="grid gap-x-8 gap-y-3 sm:grid-cols-2">
+      <ul class="divide-y divide-border">
         {
           background.items.map((item, i) => (
-            <li class="flex gap-3 text-sm leading-relaxed">
-              <span class="font-mono text-xs text-muted">{String(i + 1).padStart(2, "0")}</span>
-              <span>{item.long ?? `${item.label} — ${item.meta}`}</span>
+            <li class="py-3 text-sm leading-relaxed first:pt-0 last:pb-0">
+              <div class="flex items-baseline gap-3">
+                <span class="font-mono text-xs text-muted">{String(i + 1).padStart(2, "0")}</span>
+                <span class="font-medium">{item.label}</span>
+              </div>
+              {item.long && <p class="mt-2 pl-7 text-muted">{item.long}</p>}
             </li>
           ))
         }
