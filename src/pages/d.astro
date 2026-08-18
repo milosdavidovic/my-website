@@ -17,6 +17,8 @@ const cardIcons = [
   // cpu — industrial & manufacturing
   "M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2M7 7h10v10H7V7Z",
 ];
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <html lang="en">
@@ -24,6 +26,7 @@ const cardIcons = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
+    <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
     <title>{site.name} — {site.role}</title>
     <meta name="description" content={hero.subhead} />
     <ThemeInit defaultTheme="dark" />

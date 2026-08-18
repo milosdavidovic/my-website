@@ -7,6 +7,8 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import { site, hero, audiences, services, background, howIWork, contact } from "../lib/content";
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <html lang="en">
@@ -14,6 +16,7 @@ import { site, hero, audiences, services, background, howIWork, contact } from "
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
+    <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
     <title>{site.name} — {site.role}</title>
     <meta name="description" content={hero.subhead} />
     <ThemeInit defaultTheme="dark" />

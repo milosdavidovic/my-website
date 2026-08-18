@@ -13,9 +13,16 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/milosdavidovic",
 };
 
+const heroHeadlinePrefix = `Hi, I'm ${placeholderFirstName},`;
+const heroHeadlineWords = ["technical leader", "fractional CTO", "consultant"];
+const heroHeadlineSuffix = "for product teams.";
+
 export const hero = {
   eyebrow: "Fractional CTO & Technical Leadership",
-  headline: `Hi, I'm ${placeholderFirstName}, technical leader for product teams.`,
+  headline: `${heroHeadlinePrefix} ${heroHeadlineWords[0]} ${heroHeadlineSuffix}`,
+  headlinePrefix: heroHeadlinePrefix,
+  headlineWords: heroHeadlineWords,
+  headlineSuffix: heroHeadlineSuffix,
   subhead:
     "15 years leading engineering across IoT, fintech, medtech and manufacturing — architecture, hiring, and hands-on delivery for teams from first product to Series A.",
   primaryCta: { label: "Get in touch", href: `mailto:${site.email}` },
