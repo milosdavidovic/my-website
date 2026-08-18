@@ -1,0 +1,37 @@
+/* Variation E — blank canvas for combining favorite elements from A–D */
+
+:root {
+  --bg: #0a0a0c;
+  --surface: #131317;
+  --surface-rgb: 19, 19, 23;
+  --fg: #f2f1f5;
+  --muted: #9a97a6;
+  --accent: #a78bfa;
+  --accent-contrast: #0a0a0c;
+  --border: #26242c;
+}
+
+[data-theme="light"] {
+  --bg: #faf9fc;
+  --surface: #ffffff;
+  --surface-rgb: 255, 255, 255;
+  --fg: #16151a;
+  --muted: #5f5c6b;
+  --accent: #7c5cf0;
+  --accent-contrast: #faf9fc;
+  --border: #e6e4ec;
+}
+
+@theme {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-border: var(--border);
+
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Hanken Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+}
