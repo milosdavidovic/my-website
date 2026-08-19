@@ -7,6 +7,7 @@ import ThemeInit from "../components/ThemeInit.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import ScrollReveal from "../components/ScrollReveal.astro";
 import { site, hero, audiences, services, background, howIWork, contact, nav } from "../lib/content";
 
 const base = import.meta.env.BASE_URL;
@@ -89,10 +90,10 @@ const base = import.meta.env.BASE_URL;
           <span class="font-mono text-xs text-accent">01</span>
           <h2 class="text-sm font-semibold uppercase tracking-[0.1em]">What I offer</h2>
         </div>
-        <div class="grid gap-5 sm:grid-cols-3">
+        <div data-reveal class="reveal-group grid gap-5 sm:grid-cols-3">
           {
-            services.map((s) => (
-              <div class="rounded-lg border border-border bg-surface p-6">
+            services.map((s, i) => (
+              <div class="reveal-item rounded-lg border border-border bg-surface p-6" style={`--reveal-i: ${i}`}>
                 <h3 class="mb-2 font-medium">{s.title}</h3>
                 <p class="text-sm leading-relaxed text-muted">{s.body}</p>
               </div>
@@ -106,10 +107,10 @@ const base = import.meta.env.BASE_URL;
           <span class="font-mono text-xs text-accent">02</span>
           <h2 class="text-sm font-semibold uppercase tracking-[0.1em]">Who I usually work with</h2>
         </div>
-        <div class="grid gap-5 sm:grid-cols-3">
+        <div data-reveal class="reveal-group grid gap-5 sm:grid-cols-3">
           {
-            audiences.map((a) => (
-              <div class="rounded-lg border border-border bg-surface p-6">
+            audiences.map((a, i) => (
+              <div class="reveal-item rounded-lg border border-border bg-surface p-6" style={`--reveal-i: ${i}`}>
                 <h3 class="mb-2 font-medium">{a.title}</h3>
                 <p class="text-sm leading-relaxed text-muted">{a.body}</p>
               </div>
@@ -124,10 +125,10 @@ const base = import.meta.env.BASE_URL;
           <h2 class="text-sm font-semibold uppercase tracking-[0.1em]">Background</h2>
         </div>
         <p class="mb-7 max-w-2xl leading-relaxed text-muted">{background.intro}</p>
-        <ol class="relative border-l border-border pl-8">
+        <ol data-reveal class="reveal-group relative border-l border-border pl-8">
           {
             background.items.map((item, i) => (
-              <li class:list={["relative", i !== 0 && "mt-8"]}>
+              <li class:list={["reveal-item relative", i !== 0 && "mt-8"]} style={`--reveal-i: ${i}`}>
                 <span class="absolute -left-[37px] top-1.5 h-[11px] w-[11px] rounded-full border-2 border-accent bg-bg" />
                 <span class="text-sm font-medium">{item.label}</span>
                 {item.long && <p class="mt-1 text-sm leading-relaxed text-muted">{item.long}</p>}
@@ -142,10 +143,10 @@ const base = import.meta.env.BASE_URL;
           <span class="font-mono text-xs text-accent">04</span>
           <h2 class="text-sm font-semibold uppercase tracking-[0.1em]">How I work</h2>
         </div>
-        <div class="grid gap-5 sm:grid-cols-3">
+        <div data-reveal class="reveal-group grid gap-5 sm:grid-cols-3">
           {
-            howIWork.map((h) => (
-              <div class="rounded-lg border border-border bg-surface p-6">
+            howIWork.map((h, i) => (
+              <div class="reveal-item rounded-lg border border-border bg-surface p-6" style={`--reveal-i: ${i}`}>
                 <h3 class="mb-2 font-medium">{h.title}</h3>
                 <p class="text-sm leading-relaxed text-muted">{h.body}</p>
               </div>
@@ -159,12 +160,12 @@ const base = import.meta.env.BASE_URL;
           <span class="font-mono text-xs text-accent">05</span>
           <h2 class="text-sm font-semibold uppercase tracking-[0.1em]">Contact</h2>
         </div>
-        <div class="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
-          <div>
+        <div data-reveal class="reveal-group flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
+          <div class="reveal-item" style="--reveal-i: 0">
             <h3 class="text-2xl font-semibold sm:text-3xl">{contact.heading}</h3>
             <p class="mt-3 max-w-md leading-relaxed text-muted">{contact.body}</p>
           </div>
-          <div class="flex shrink-0 flex-wrap items-center gap-3">
+          <div class="reveal-item flex shrink-0 flex-wrap items-center gap-3" style="--reveal-i: 1">
             <a
               href={`mailto:${site.email}`}
               class="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-accent-contrast transition-opacity hover:opacity-90"
@@ -186,6 +187,8 @@ const base = import.meta.env.BASE_URL;
 
     <SiteFooter />
 
+    <ScrollReveal />
+
     <style>
       .glass-nav {
         background-color: rgba(var(--surface-rgb), 0.65);
@@ -200,6 +203,19 @@ const base = import.meta.env.BASE_URL;
           linear-gradient(to bottom, var(--border) 1px, transparent 1px);
         background-size: 40px 40px;
         mask-image: radial-gradient(ellipse 70% 55% at 50% 20%, black 30%, transparent 100%);
+      }
+
+      .reveal-item {
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+          opacity 0.5s ease-out,
+          transform 0.5s ease-out;
+      }
+      .reveal-group.is-revealed .reveal-item {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: calc(var(--reveal-i, 0) * 90ms);
       }
     </style>
   </body>
