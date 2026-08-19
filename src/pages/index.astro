@@ -8,9 +8,28 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 import PhotoPlaceholder from "../components/PhotoPlaceholder.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import ScrollReveal from "../components/ScrollReveal.astro";
+import heroPhoto from "../assets/hero-photo.png";
 import { site, hero, audiences, services, background, howIWork, contact, nav } from "../lib/content";
 
 const base = import.meta.env.BASE_URL;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(heroPhoto.src, Astro.site);
+const pageTitle = `${site.name} — ${site.role}`;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  jobTitle: site.role,
+  url: canonicalURL.href,
+  image: ogImageURL.href,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: site.location,
+  },
+  email: `mailto:${site.email}`,
+  sameAs: [site.linkedin],
+};
 ---
 
 <html lang="en">
@@ -19,8 +38,25 @@ const base = import.meta.env.BASE_URL;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
     <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
-    <title>{site.name} — {site.role}</title>
+    <link rel="canonical" href={canonicalURL} />
+    <title>{pageTitle}</title>
     <meta name="description" content={hero.subhead} />
+    <meta name="theme-color" content="#7c5cf0" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={hero.subhead} />
+    <meta property="og:image" content={ogImageURL} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={hero.subhead} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
     <ThemeInit />
   </head>
   <body class="min-h-screen bg-bg font-sans text-fg antialiased">
