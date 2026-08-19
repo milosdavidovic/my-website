@@ -114,15 +114,15 @@ export const background = {
 export const howIWork = [
   {
     title: "Straightforward contracting",
-    body: "Outcome-based retainers, not hourly billing or time-tracking. Clear scope, clear deliverables, and a contract that spells out what you're getting.",
+    body: "A fixed monthly fee, agreed in advance, with the scope written down. Invoiced monthly — cancel anytime, no notice required.",
   },
   {
-    title: "Async-first",
-    body: "Your team gets unblocked in hours, not at the next weekly meeting — code review, architecture guidance and decisions in Slack, GitHub and Jira, with a short call to stay aligned.",
+    title: "How we'd work together",
+    body: "We agree hours each week when I'm reachable for calls or live discussion. The rest happens async — code review, architecture questions and decisions in Slack, GitHub and Jira, or whatever your team already uses.",
   },
   {
-    title: "Flexible by design",
-    body: "Based in Novi Sad, working comfortably across EU and US time zones. Engagements scale up or down as your needs change — no long lock-in.",
+    title: "Where and when",
+    body: "Remote, working across EU and US time zones. Engagements are typically one to three days a week and change as the work does.",
   },
 ] as const;
 
@@ -137,7 +137,7 @@ export const contact = {
 // just told as a how/avoid contrast instead of a plain list.
 export const philosophy = {
   how: [
-    "Outcome-based retainers, not hourly billing — clear scope and deliverables from the start.",
+    "A fixed monthly fee, agreed in advance, with the scope written down. Invoiced monthly — cancel anytime, no notice required.",
     "Async-first: code review, architecture guidance and decisions in Slack, GitHub and Jira, with a short call to stay aligned.",
     "Engagements scale up or down as your needs change, working across EU and US time zones.",
   ],
