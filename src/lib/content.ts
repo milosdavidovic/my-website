@@ -13,18 +13,20 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/milosdavidovic",
 };
 
-const heroHeadlinePrefix = `Hi, I'm ${placeholderFirstName},`;
+const heroHeadlineGreeting = "Hi,";
+const heroHeadlineName = placeholderFirstName;
 const heroHeadlineWords = ["technical leader", "fractional CTO", "consultant"];
 const heroHeadlineSuffix = "for product teams.";
 
 export const hero = {
   eyebrow: "Fractional CTO & Technical Leadership",
-  headline: `${heroHeadlinePrefix} ${heroHeadlineWords[0]} ${heroHeadlineSuffix}`,
-  headlinePrefix: heroHeadlinePrefix,
+  headline: `${heroHeadlineGreeting} I'm ${heroHeadlineName}, ${heroHeadlineWords[0]} ${heroHeadlineSuffix}`,
+  headlineGreeting: heroHeadlineGreeting,
+  headlineName: heroHeadlineName,
   headlineWords: heroHeadlineWords,
   headlineSuffix: heroHeadlineSuffix,
   subhead:
-    "15 years leading engineering across IoT, fintech, medtech and manufacturing — architecture, hiring, and hands-on delivery for teams from first product to Series A.",
+    "I've worked as an engineer, tech lead, co-CTO and founder over the past 15 years. Now my focus is on helping early-stage teams with architecture, hiring and technical direction.",
   primaryCta: { label: "Get in touch", href: `mailto:${site.email}` },
   secondaryCta: {
     label: "LinkedIn",
@@ -35,7 +37,7 @@ export const hero = {
 export const audiences = [
   {
     title: "Early-stage founders",
-    body: "You have the product vision and no CTO yet. I can help with technical foundation, first hire, system design, so you can avoid costly mistakes and time waste.",
+    body: "The product vision is set, but there's no CTO yet. I bring the technical foundation, first hires and system design to help avoid costly early mistakes.",
     tags: ["Architecture", "Early hires"],
   },
   {
@@ -45,7 +47,7 @@ export const audiences = [
   },
   {
     title: "Industrial & IoT",
-    body: "You build physical products and need a digital layer — IoT, cloud, or a SaaS product around your hardware. My background is mechatronics engineering, so I understand the challenges of the industry.",
+    body: "The product is physical and needs a digital layer — IoT, cloud, or a SaaS layer around the hardware. I have a mechatronics background, so the industry's challenges are already familiar.",
     tags: ["IoT", "Embedded + cloud"],
   },
 ] as const;
@@ -53,15 +55,15 @@ export const audiences = [
 export const services = [
   {
     title: "Fractional CTO / Technical Leadership",
-    body: "Ongoing, part-time. Architecture decisions, technical strategy, and hiring for a team that doesn't need a full-time hire yet, but needs technical guidance.",
+    body: "Ongoing, part-time. Architecture decisions, technical strategy, and hiring support — for teams that need senior technical leadership without a full-time CTO.",
   },
   {
     title: "Architecture & Technical Assessment",
-    body: "A scoped, time-boxed engagement: audit of the codebase and team. Written report — findings and improvements, prioritized, ready for your team to act on.",
+    body: "A scoped, time-boxed engagement: audit of the codebase and engineering practices. Written report — findings and improvements, prioritized, ready for your team to act on.",
   },
   {
     title: "Hands-on Senior Engineering",
-    body: "When you're behind schedule and need hands-on help, not just advice, I work alongside the team directly — code review, pairing, unblocking, and CI/CD.",
+    body: "When you're behind schedule and need hands-on help, not just advice: code review, pairing, shipping features, and CI/CD.",
   },
 ] as const;
 
@@ -99,12 +101,12 @@ export const background = {
     {
       label: "Software engineer",
       meta: "Across fintech, medtech, manufacturing and cloud",
-      long: "15+ years as a software engineer across fintech, medtech, manufacturing and cloud platforms — different domains, project types and stages of a product's life",
+      long: "12+ years as a software engineer across fintech, medtech, manufacturing and cloud platforms — different domains, project types and stages of a product's life",
     },
     {
       label: "Mechatronics background",
       meta: "Software that runs alongside physical machines",
-      long: "MSc Mechatronics — the differentiator behind the industrial and IoT work: I speak both software and factory floor",
+      long: "MSc Mechatronics — I understand how software and hardware work together",
     },
   ],
 };

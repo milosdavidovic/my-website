@@ -44,10 +44,9 @@ const base = import.meta.env.BASE_URL;
           <h1 class="mt-5 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
             <span class="sr-only">{hero.headline}</span>
             <span aria-hidden="true">
-              {hero.headlinePrefix}{" "}
-              <span class="text-accent"
-                ><span id="typing-word"></span><span class="typing-cursor"></span></span
-              ><br />
+              {hero.headlineGreeting} I'm{" "}
+              <span class="text-accent">{hero.headlineName}</span>,{" "}
+              <span id="typing-word"></span><span class="typing-cursor"></span><br />
               {hero.headlineSuffix}
             </span>
           </h1>
@@ -75,19 +74,16 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     <section class="mx-auto max-w-6xl border-x border-t border-border px-6 py-14 sm:px-10">
-      <div data-reveal class="reveal mb-10 flex items-baseline gap-3 border-b border-border pb-3">
+      <div class="mb-10 flex items-baseline gap-3 border-b border-border pb-3">
         <span class="font-mono text-xs text-accent">01</span>
         <h2 class="text-sm font-semibold uppercase tracking-[0.1em]">What I offer</h2>
       </div>
-      <div class="grid gap-8 sm:grid-cols-3 sm:gap-0">
+      <div data-reveal class="reveal-group grid gap-8 sm:grid-cols-3 sm:gap-0">
         {
           services.map((s, i) => (
             <div
-              class:list={[
-                "sm:px-8",
-                i !== 0 && "sm:border-l sm:border-border",
-                i === 0 && "sm:pl-0",
-              ]}
+              class:list={["reveal-item", "sm:px-8", i !== 0 && "sm:border-l sm:border-border", i === 0 && "sm:pl-0"]}
+              style={`--reveal-i: ${i}`}
             >
               <h3 class="mb-2 font-medium">{s.title}</h3>
               <p class="text-sm leading-relaxed text-muted">{s.body}</p>
@@ -98,19 +94,21 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     <section class="mx-auto max-w-6xl border-x border-t border-border px-6 py-14 sm:px-10">
-      <div data-reveal class="reveal mb-10 flex items-baseline gap-3 border-b border-border pb-3">
+      <div class="mb-10 flex items-baseline gap-3 border-b border-border pb-3">
         <span class="font-mono text-xs text-accent">02</span>
         <h2 class="text-sm font-semibold uppercase tracking-[0.1em]">Who I usually work with</h2>
       </div>
-      <div class="grid gap-8 sm:grid-cols-3 sm:gap-0">
+      <div data-reveal class="reveal-group grid gap-8 sm:grid-cols-3 sm:gap-0">
         {
           audiences.map((a, i) => (
             <div
               class:list={[
+                "reveal-item",
                 "sm:px-8",
                 i !== 0 && "sm:border-l sm:border-border",
                 i === 0 && "sm:pl-0",
               ]}
+              style={`--reveal-i: ${i}`}
             >
               <h3 class="mb-2 font-medium">{a.title}</h3>
               <p class="text-sm leading-relaxed text-muted">{a.body}</p>
@@ -121,15 +119,15 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     <section class="mx-auto max-w-6xl border-x border-t border-border px-6 py-14 sm:px-10">
-      <div data-reveal class="reveal mb-10 flex items-baseline gap-3 border-b border-border pb-3">
+      <div class="mb-10 flex items-baseline gap-3 border-b border-border pb-3">
         <span class="font-mono text-xs text-accent">03</span>
         <h2 class="text-sm font-semibold uppercase tracking-[0.1em]">Background</h2>
       </div>
       <p class="mb-7 max-w-2xl leading-relaxed text-muted">{background.intro}</p>
-      <ul class="divide-y divide-border">
+      <ul data-reveal class="reveal-group divide-y divide-border">
         {
           background.items.map((item, i) => (
-            <li class="py-3 text-sm leading-relaxed first:pt-0 last:pb-0">
+            <li class="reveal-item py-3 text-sm leading-relaxed first:pt-0 last:pb-0" style={`--reveal-i: ${i}`}>
               <div class="flex items-baseline gap-3">
                 <span class="font-mono text-xs text-muted">{String(i + 1).padStart(2, "0")}</span>
                 <span class="font-medium">{item.label}</span>
@@ -142,19 +140,21 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     <section class="mx-auto max-w-6xl border-x border-t border-border px-6 py-14 sm:px-10">
-      <div data-reveal class="reveal mb-10 flex items-baseline gap-3 border-b border-border pb-3">
+      <div class="mb-10 flex items-baseline gap-3 border-b border-border pb-3">
         <span class="font-mono text-xs text-accent">04</span>
         <h2 class="text-sm font-semibold uppercase tracking-[0.1em]">How I work</h2>
       </div>
-      <div class="grid gap-8 sm:grid-cols-3 sm:gap-0">
+      <div data-reveal class="reveal-group grid gap-8 sm:grid-cols-3 sm:gap-0">
         {
           howIWork.map((h, i) => (
             <div
               class:list={[
+                "reveal-item",
                 "sm:px-8",
                 i !== 0 && "sm:border-l sm:border-border",
                 i === 0 && "sm:pl-0",
               ]}
+              style={`--reveal-i: ${i}`}
             >
               <h3 class="mb-2 font-medium">{h.title}</h3>
               <p class="text-sm leading-relaxed text-muted">{h.body}</p>
@@ -165,16 +165,16 @@ const base = import.meta.env.BASE_URL;
     </section>
 
     <section class="mx-auto max-w-6xl border border-border px-6 py-16 sm:px-10">
-      <div data-reveal class="reveal mb-10 flex items-baseline gap-3 border-b border-border pb-3">
+      <div class="mb-10 flex items-baseline gap-3 border-b border-border pb-3">
         <span class="font-mono text-xs text-accent">05</span>
         <h2 class="text-sm font-semibold uppercase tracking-[0.1em]">Contact</h2>
       </div>
-      <div class="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
-        <div>
+      <div data-reveal class="reveal-group flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
+        <div class="reveal-item" style="--reveal-i: 0">
           <h3 class="text-2xl font-semibold sm:text-3xl">{contact.heading}</h3>
           <p class="mt-3 max-w-md leading-relaxed text-muted">{contact.body}</p>
         </div>
-        <div class="flex shrink-0 flex-wrap items-center gap-3">
+        <div class="reveal-item flex shrink-0 flex-wrap items-center gap-3" style="--reveal-i: 1">
           <a
             href={`mailto:${site.email}`}
             class="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-accent-contrast transition-opacity hover:opacity-90"
@@ -201,6 +201,10 @@ const base = import.meta.env.BASE_URL;
       (function () {
         var el = document.getElementById("typing-word");
         if (!el) return;
+
+        // Typing animation temporarily disabled — remove this block to re-enable.
+        el.textContent = words[0];
+        return;
 
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
           el.textContent = words[0];
@@ -244,20 +248,22 @@ const base = import.meta.env.BASE_URL;
     </script>
 
     <style>
-      .reveal {
+      .reveal-item {
         opacity: 0;
         transform: translateY(10px);
         transition:
           opacity 0.5s ease-out,
           transform 0.5s ease-out;
       }
-      .reveal.is-revealed {
+      .reveal-group.is-revealed .reveal-item {
         opacity: 1;
         transform: translateY(0);
+        transition-delay: calc(var(--reveal-i, 0) * 90ms);
       }
 
       .typing-cursor {
-        display: inline-block;
+        /* Typing animation temporarily disabled — set back to inline-block to re-enable. */
+        display: none;
         width: 3px;
         height: 0.85em;
         margin-left: 2px;
