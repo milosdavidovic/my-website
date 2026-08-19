@@ -1,8 +1,7 @@
 ## Design & brand
 
-Before making visual or copy changes, check `src/pages/brand.astro` (rendered at `/brand`) —
-it documents the shared palette, type choices, voice/tone rules, and per-variation shape/structure
-notes. Copy lives in `src/lib/content.ts`, shared across all four variations (`/a`, `/b`, `/c`, `/d`).
+Before making visual or copy changes, check `docs/brand.md` — it documents the palette,
+type choices, voice/tone rules, and shape/structure notes. Copy lives in `src/lib/content.ts`.
 
 ## Development
 

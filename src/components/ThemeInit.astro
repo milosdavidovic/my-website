@@ -1,18 +1,19 @@
 ---
-interface Props {
-  defaultTheme: "light" | "dark";
-}
-const { defaultTheme } = Astro.props;
 ---
 
-<script is:inline define:vars={{ defaultTheme }}>
+<script is:inline>
   (function () {
     try {
       var stored = localStorage.getItem("theme");
-      var theme = stored === "light" || stored === "dark" ? stored : defaultTheme;
+      var theme;
+      if (stored === "light" || stored === "dark") {
+        theme = stored;
+      } else {
+        theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
       document.documentElement.setAttribute("data-theme", theme);
     } catch (e) {
-      document.documentElement.setAttribute("data-theme", defaultTheme);
+      document.documentElement.setAttribute("data-theme", "dark");
     }
   })();
 </script>
