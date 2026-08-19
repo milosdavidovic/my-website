@@ -3,6 +3,12 @@
 Before making visual or copy changes, check `docs/brand.md` — it documents the palette,
 type choices, voice/tone rules, and shape/structure notes. Copy lives in `src/lib/content.ts`.
 
+## SEO
+
+`index.astro`'s meta/OG tags and JSON-LD are generated from `content.ts` and
+`astro.config.mjs`. When changing either, check the head block still makes sense.
+Note: `noindex` is intentional pre-launch (see `docs/brand.md`).
+
 ## Development
 
 When starting the dev server, use background mode:

@@ -27,8 +27,21 @@ const personSchema = {
     "@type": "PostalAddress",
     addressLocality: site.location,
   },
+  areaServed: ["EU", "US"],
   email: `mailto:${site.email}`,
   sameAs: [site.linkedin],
+  knowsAbout: [
+    ...services.map((s) => s.title),
+    ...audiences.map((a) => a.title),
+  ],
+  makesOffer: services.map((s) => ({
+    "@type": "Offer",
+    itemOffered: {
+      "@type": "Service",
+      name: s.title,
+      description: s.body,
+    },
+  })),
 };
 ---
 
@@ -41,9 +54,12 @@ const personSchema = {
     <link rel="canonical" href={canonicalURL} />
     <title>{pageTitle}</title>
     <meta name="description" content={hero.subhead} />
+    <meta name="author" content={site.name} />
     <meta name="theme-color" content="#7c5cf0" />
 
     <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={hero.subhead} />
