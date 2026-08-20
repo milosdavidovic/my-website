@@ -1,11 +1,10 @@
 // Single source of truth for site copy.
 
-// Whitelabel placeholders until the real name goes live — change here.
-const placeholderFirstName = "Steve";
-const placeholderFullName = "Steve Palmer";
+const firstName = "Milos";
+const fullName = "Milos Davidovic";
 
 export const site = {
-  name: placeholderFullName,
+  name: fullName,
   role: "Fractional CTO & Technical Leadership",
   location: "Novi Sad, Serbia",
   email: "milos@davidovic.net",
@@ -13,7 +12,7 @@ export const site = {
 };
 
 const heroHeadlineGreeting = "Hi,";
-const heroHeadlineName = placeholderFirstName;
+const heroHeadlineName = firstName;
 const heroHeadlineWords = ["technical leader", "fractional CTO", "consultant"];
 const heroHeadlineSuffix = "for product teams.";
 
