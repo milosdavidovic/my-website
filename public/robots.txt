@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://milosdavidovic.github.io/my-website/sitemap-index.xml
+Sitemap: https://davidovic.net/sitemap-index.xml

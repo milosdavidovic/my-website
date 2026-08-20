@@ -81,4 +81,5 @@ Once a visitor toggles light/dark manually, the choice is remembered in the brow
 
 - Placeholder name ("Steve Palmer") and photo still need to be swapped for the real
   ones before launch — see `src/lib/content.ts`.
-- Domain and final deploy target not yet decided.
+- Domain: davidovic.net (DNS on Cloudflare). Deploy target: Railway (see `railway.json`;
+  static build served via `serve`, configured in `package.json`'s `start` script).

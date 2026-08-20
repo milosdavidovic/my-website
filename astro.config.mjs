@@ -7,8 +7,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://milosdavidovic.github.io',
-  base: '/my-website/',
+  site: 'https://davidovic.net',
 
   vite: {
     plugins: [tailwindcss()]
