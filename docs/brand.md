@@ -79,7 +79,8 @@ Once a visitor toggles light/dark manually, the choice is remembered in the brow
 
 ## Open items
 
-- Name is set (Milos Davidovic, `src/lib/content.ts`); placeholder photo still needs
-  to be swapped for the real one before launch.
+- Name and photo are both set (`src/lib/content.ts`, `src/assets/hero-photo.png`).
+- Remaining before public launch: flip `noindex` off in `src/pages/index.astro`
+  (currently intentional, see head block).
 - Domain: davidovic.net (DNS on Cloudflare). Deploy target: Railway (see `railway.json`;
   static build served via `serve`, configured in `package.json`'s `start` script).
